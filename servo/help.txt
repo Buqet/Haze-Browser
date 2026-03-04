@@ -1,0 +1,89 @@
+servo [OPTIONS] URL
+
+Available positional items:
+    URL                       The url we should load.
+
+Available options:
+    -B, --bhm                 Background Hang Monitor enabled.
+        --certificate-path=</home/servo/resources/certs>
+                              Path to find SSL certificates.
+        --clean-shutdown      Do not shutdown until all threads have finished
+                              (macos only).
+        --config-dir=<~/.config/servo>
+                              Config directory following xdg spec on linux
+                              platform.
+        --content-process=<servo-ipc-channel.abcdefg>
+                              Run as a content process and connect to the given
+                              pipe.
+    -Z, --debug=<layout_grid_enabled=true,dom_async_clipboard_enabled>
+                              A comma-separated string of debug options. Pass
+                              help to show available options.
+        --device-pixel-ratio=<1.0>
+                              Device pixels per px.
+        --devtools=<127.0.0.1:7000>  Start remote devtools server on port
+                              listening on this address. <address>:<port> and
+                              <port> are valid values.
+        --enable-experimental-web-platform-features
+                              Whether or not to enable experimental web platform
+                              features.
+    -x, --exit
+    -I, --force-ipc
+    -f, --hard-fail           Exit on thread failure instead of displaying
+                              about:failure.
+    -z, --headless            Headless mode.
+        --ignore-certificate-errors
+                              Whether or not to completely ignore certificate
+                              errors.
+    -y, --layout-threads=1    Number of threads to use for layout.
+        --local-script-source=<~/.local/share/servo>
+                              Directory root with unminified scripts.
+    -M, --multiprocess        Run in multiprocess mode.
+    -b, --no-native-titlebar  Do not use native titlebar.
+    -i, --nonincremental-layout
+                              Enable to turn off incremental layout.
+    -o, --output=<test.png>   Path to an output image. The format of the image
+                              is determined by the extension. Supports all
+                              formats that `rust-image` does.
+    -p, --profile=            uses 5.0 output as standard if no argument
+                              supplied
+        --profiler-trace-path=<trace.html>
+                              Path to dump a self-contained HTML timeline of
+                              profiler traces.
+        --pref=<dom_bluetooth_enabled>
+                              A preference to set.
+        --prefs-file=</path/to/prefs.json>
+                              Load in additional prefs from a file.
+        --print-pwm           Print Progressive Web Metrics.
+        --random-pipeline-closure-probability=<0.25>
+                              Probability of randomly closing a pipeline (for
+                              testing constellation hardening).
+        --random-pipeline-closure-seed=ARG  A fixed seed for repeatbility of
+                              random pipeline closure.
+    -S, --sandbox             Run in a sandbox if multiprocess.
+        --shaders=ARG         Shaders will be loaded from the specified
+                              directory instead of using the builtin ones.
+        --screen-size=<1024x768>
+                              Override the screen resolution in logical (device
+                              independent) pixels.
+        --simulate-touch-events  Use mouse events to simulate touch events. Left
+                              button presses will be converted to touch and
+                              mouse movements while the left button is pressed
+                              will be converted to touch movements.
+        --tracing-filter=FILTER  Define a custom filter for traces. Overrides
+                              `SERVO_TRACING` if set.
+        --unminify-js         Unminify Javascript.
+        --unminify-css        Unminify Css.
+    -u, --user-agent=<NCSA mosaic/1.0 (X11;SunOS 4.1.4 sun4m>
+                              Set custom user agent string (or ios / android /
+                              desktop for platform default).
+        --userscripts_directory=<your/directory>  Uses userscripts in
+                              resources/user-agent-js, or a specified full path
+        --user-stylesheet=<file.css>
+                              A user stylesheet to be added to every document.
+        --webdriver=7000      Start remote WebDriver server on port
+        --window-size=<1024x740>
+                              Set the initial window size in logical (device
+                              independent) pixels.
+    -h, --help                Prints help information
+    -V, --version             Prints version information
+

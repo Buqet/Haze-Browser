@@ -1,0 +1,75 @@
+[package]
+name = "haze"
+version = "0.1.0"
+authors = ["The Haze Project Developers"]
+description = "A modern web browser built on Servo"
+license = "MPL-2.0"
+edition = "2024"
+rust-version = "1.86.0"
+
+[lib]
+name = "haze"
+path = "src/lib.rs"
+
+[[bin]]
+name = "haze"
+path = "src/main.rs"
+
+[features]
+default = ["webgpu", "webxr"]
+webgpu = []
+webxr = []
+
+[dependencies]
+# Servo - основной движок
+libservo = { path = "./servo/components/servo", features = ["background_hang_monitor", "bluetooth", "testbinding"], default-features = false }
+servoshell = { path = "./servo/ports/servoshell" }
+
+# Windowing
+winit = "0.30"
+raw-window-handle = "0.6"
+
+# Math and geometry
+euclid = "0.22"
+keyboard-types = "0.7"
+dpi = "0.1"
+
+# Logging
+log = "0.4"
+env_logger = "0.11"
+
+# Async
+tokio = { version = "1", features = ["full"] }
+crossbeam-channel = "0.5"
+
+# Crypto
+rustls = { version = "0.23", features = ["aws-lc-rs"] }
+
+# Image support
+image = "0.25"
+
+# Directories
+dirs = "5"
+
+# URL parsing
+url = "2.5"
+urlencoding = "2.1"
+
+# Servo internal crates (re-exported through libservo)
+# Note: We access these through libservo's public API
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.58", features = ["Win32_Foundation", "Win32_UI_WindowsAndMessaging"] }
+
+[build-dependencies]
+cc = "1.2"
+
+[target.'cfg(windows)'.build-dependencies]
+winresource = "0.1"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+
+[profile.dev]
+debug = 2

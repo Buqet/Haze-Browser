@@ -1,0 +1,54 @@
+# Rust build artifacts
+/target/
+**/target/
+
+# Cargo lock for libraries (optional)
+# Cargo.lock
+
+# IDE and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Rust analyzer
+.rust-analyzer/
+
+# Build output
+**/*.pdb
+**/*.dll
+**/*.exe
+**/*.so
+**/*.dylib
+
+# Crash reports
+**/*.dmp
+
+# Logs
+*.log
+logs/
+
+# Coverage
+*.gcda
+*.gcno
+*.gcov
+**/lcov/
+**/coverage/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Servo build artifacts (if building servo submodule)
+servo/target/
+servo/python/__pycache__/
+servo/.mach/
+
+# Haze specific
+downloads/
+cache/
+config.toml
+sessions/
